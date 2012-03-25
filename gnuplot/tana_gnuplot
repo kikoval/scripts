@@ -1,0 +1,13 @@
+# gnuplot script to plot 2d data (time, value)
+
+set term pdf 
+set output "graf.pdf"
+set log y
+set xlabel "Čas"
+set ylabel "Bilirubín umol/l"
+set xrange [0:22]
+set key left to
+# transparentna vypln pre normal
+set grid
+set style fill  transparent solid 0.50
+plot "data.dat" using 1 with filledcu x1 lt rgb "grey" title "Normály stav", "data.dat" using 2 with lines lw 2 lt 1 title "Pacient"
